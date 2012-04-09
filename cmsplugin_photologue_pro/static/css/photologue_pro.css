@@ -1,0 +1,126 @@
+.photologue_pro_album, .photologue_pro_photo {
+	float: left;
+	margin: 0 20px 0 0;
+	text-align: center;
+}
+
+.photologue_pro_album_thumbnails {
+	display: block;
+	height: 160px;
+	width: 160px;
+}
+
+.photologue_pro_album .photologue_pro_polaroid {
+	position: absolute;
+}
+
+.photologue_pro_polaroid {
+	width: 130px;
+	height: 130px;
+	border: 10px solid #fff;
+	-webkit-transition: -webkit-transform .15s linear;
+	-webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+.photologue_pro_polaroid.photo1 {
+	-webkit-transform: rotate(-4deg);
+	-moz-transform: rotate(-4deg);
+	-o-transform: rotate(-4deg);
+	z-index: 3;
+}
+
+.photologue_pro_polaroid.photo2 {
+	z-index: 2;
+}
+
+.photologue_pro_polaroid.photo3 {
+	-webkit-transform: rotate(4deg);
+	-moz-transform: rotate(4deg);
+	-o-transform: rotate(4deg);
+	z-index: 1;
+}
+
+.photologue_pro_album_thumbnails:hover .photologue_pro_polaroid,
+.photologue_pro_album_thumbnails:focus .photologue_pro_polaroid {
+	-webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.photologue_pro_album_thumbnails:hover .photologue_pro_polaroid.photo1,
+.photologue_pro_album_thumbnails:focus .photologue_pro_polaroid.photo1 {
+	-webkit-transform: scale(1.15) rotate(-8deg) translate(-3em, 0em);
+	-moz-transform: rotate(8deg);
+	-o-transform: rotate(8deg);
+	z-index: 6;
+}
+
+.photologue_pro_album_thumbnails:hover .photologue_pro_polaroid.photo2,
+.photologue_pro_album_thumbnails:focus .photologue_pro_polaroid.photo2 {
+	-webkit-transform: scale(1.15) rotate(0deg);
+	-moz-transform: rotate(-8deg);
+	-o-transform: rotate(-8deg);
+	z-index: 5;
+}
+
+.photologue_pro_album_thumbnails:hover .photologue_pro_polaroid.photo3,
+.photologue_pro_album_thumbnails:focus .photologue_pro_polaroid.photo3 {
+	-webkit-transform: scale(1.15) rotate(8deg) translate(3em, 0em);
+	-moz-transform: rotate(-8deg);
+	-o-transform: rotate(-8deg);
+	z-index: 4;
+}
+
+.photologue_pro_back {
+	margin: 0 0 15px;
+}
+
+.photologue_pro_album_title, .photologue_pro_photo_title {
+	margin: 0;
+}
+
+.photologue_pro_album_index a {
+	margin: 8px;
+}
+
+.photologue_pro_album_index a:hover .photologue_pro_polaroid,
+.photologue_pro_album_index a:focus .photologue_pro_polaroid {
+	-webkit-transform: scale(1.2);
+	z-index: 2;
+}
+
+.photologue_pro_photo_details {
+	float: left;
+}
+
+.photologue_pro_photo_details img, .photologue_pro_photo_caption {
+	display: block;
+}
+
+.photologue_pro_photo_caption {
+	margin-top: 15px;
+}
+
+.photologue_pro_photo_sidebar {
+	width: 280px;
+	float: right;
+}
+
+.photologue_pro_photo_sidebar h3, .photologue_pro_photo_sidebar p {
+	margin: 0;
+}
+
+.photologue_pro_photo_sidebar div {
+	margin: 0 0 20px;
+}
+
+.photologue_pro_photo_sidebar table {
+	border-spacing: 0;
+}
+
+.photologue_pro_photo_sidebar table th {
+	width: 120px;
+	text-align: left;
+}

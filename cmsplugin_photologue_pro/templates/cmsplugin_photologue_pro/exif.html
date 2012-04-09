@@ -1,0 +1,30 @@
+{% load i18n l10n cmsplugin_photologue_pro_tags %}
+<div class="photologue_pro_photo_exif">
+	<h3>{% trans "EXIF data" %}</h3>
+	<table>
+		<tr>
+			<th>{% trans "Date" %}</th>
+			<td>{% exif photo "Image DateTime" %}</td>
+		</tr>
+		<tr>
+			<th>{% trans "Camera" %}</th>
+			<td>{% exif photo "Image Model" %}</td>
+		</tr>
+		<tr>
+			<th>{% trans "Exposure" %}</th>
+			<td>{% exif photo "EXIF ExposureTime" %} sec</td>
+		</tr>
+		<tr>
+			<th>{% trans "Aperture" %}</th>
+			<td>{% exif photo "EXIF MaxApertureValue" %}</td>
+		</tr>
+		<tr>
+			<th>{% trans "Focal Length" %}</th>
+			<td>{% exif photo "EXIF FocalLength" %} mm</td>
+		</tr>
+		<tr>
+			<th>{% trans "ISO Speed" %}</th>
+			<td>{% exif photo "EXIF ISOSpeedRatings" %}</td>
+		</tr>
+	</table>
+</div>

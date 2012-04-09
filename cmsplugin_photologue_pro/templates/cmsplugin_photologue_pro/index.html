@@ -1,0 +1,17 @@
+{% extends "cmsplugin_photologue_pro/cmsplugin_photologue_pro_base.html" %}
+{% load cmsplugin_photologue_pro_tags i18n %}
+
+{% block gallery %}
+{% for gallery in galleries %}
+<div class="photologue_pro_album">
+	<a href="{% url cmsplugin_photologue_pro.views.album gallery.id %}" class="photologue_pro_album_thumbnails">
+		{% for photo in gallery.photos.all|slice:":3" %}
+			{% polaroid_thumbnail photo forloop.counter %}
+		{% endfor %}
+	</a>
+	<h4 class="photologue_pro_album_title">{{ gallery.title }}</h4>
+	<span class="photologue_pro_album_count">{% blocktrans with gallery.photo_count as count %}{{ count }} photos{% endblocktrans %}</span>
+</div>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "cmsplugin_photologue_pro/cmsplugin_photologue_pro_base.html" %}
+{% load cmsplugin_photologue_pro_tags i18n %}
+
+{% block gallery %}
+<div class="photologue_pro_back">
+	<a href="{% url cmsplugin_photologue_pro.views.album gallery.id %}">&lt; {% trans "Back to album" %}</a>
+	{% if previous %}<a href="{% url cmsplugin_photologue_pro.views.photo gallery.id previous.id %}">{% trans "Previous photo" %}</a>{% endif %}
+	{% if next %}<a href="{% url cmsplugin_photologue_pro.views.photo gallery.id next.id %}">{% trans "Next photo" %}</a>{% endif %}
+</div>
+<div class="photologue_pro_photo_details">
+	<img src="{{ photo.get_normal_url }}" alt="{{ photo.title }}" title="{{ photo.title }}" />
+	<h2>{{ photo.title }}</h2>
+	{% if photo.caption %}
+	<div class="photologue_pro_photo_caption">{{ photo.caption }}</div>
+	{% endif %}
+</div>
+<aside class="photologue_pro_photo_sidebar">
+	<div>
+		<p>{% blocktrans with photo.date_taken|date:"DATE_FORMAT" as date and photo.view_count as views %}This photo was taken on {{ date }} and was viewed {{ views }} times.{% endblocktrans %}</p>
+	</div>
+	{% if exif %}
+	{% include "cmsplugin_photologue_pro/exif.html" %}
+	{% endif %}
+	{% if photo.tags %}
+	<div class="photologue_pro_photo_tags">	
+		<h3>Tags</h3>
+		<p>{{ photo.tags }}</p>
+	</div>
+	{% endif %}
+</aside>
+{% endblock %}

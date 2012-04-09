@@ -3,13 +3,13 @@ import os
 from setuptools import setup, find_packages
 
 setup(
-    name='cmsplugin-photologue',
+    name='cmsplugin-photologue-pro',
     version='0.1.0',
     description='Photo gallery plugin for Django CMS',
     long_description=open(os.path.join(os.path.dirname(__file__), 'README.rst')).read(),
     author='Raphael Jasjukaitis',
     author_email='webmaster@raphaa.de',
-    url='https://github.com/raphaa/cmsplugin-photologue',
+    url='https://github.com/raphaa/cmsplugin-photologue-pro',
     packages=find_packages(),
     classifiers=[
         'Environment :: Web Environment',
@@ -19,6 +19,7 @@ setup(
         'Framework :: Django',
     ],
     zip_safe=False,
-    include_package_data=True
+    include_package_data=True,
+    install_requires=['django-cms', 'django-photologue']
 )
 

@@ -6,6 +6,6 @@ from django.utils.translation import ugettext_lazy as _
 
 class PhotologueApphook(CMSApp):
     name = _(u'Photologue galleries')
-    urls = ['cmsplugin_photologue.urls']
+    urls = ['cmsplugin_photologue_pro.urls']
 
 apphook_pool.register(PhotologueApphook)
