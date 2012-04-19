@@ -9,7 +9,8 @@ def overview(request):
     """Shows all available photo galleries."""
     galleries = models.Gallery.objects.filter(is_public=True)
     return render(request, 'cmsplugin_photologue_pro/index.html',
-                  {'galleries': galleries})
+                  {'galleries': galleries,
+                   'order': [1, 2, 3]})
 
 def album(request, album):
     """Shows all images of album."""
