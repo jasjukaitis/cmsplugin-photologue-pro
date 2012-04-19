@@ -91,6 +91,12 @@
 	z-index: 2;
 }
 
+.photologue_pro_album_description {
+	margin: 0;
+	padding-top: 20px;
+	clear: both;
+}
+
 .photologue_pro_photo_details {
 	float: left;
 }
