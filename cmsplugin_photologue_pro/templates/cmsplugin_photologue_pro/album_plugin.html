@@ -1,0 +1,13 @@
+{% load cmsplugin_photologue_pro_tags i18n %}
+
+{% block gallery %}
+<h2>{{ gallery.title }}</h2>
+<div class="photologue_pro_album_index">
+	{% for photo in photos %}
+	<div class="photologue_pro_photo">
+		<a href="{% url cmsplugin_photologue_pro.views.photo gallery.id photo.id %}">{% polaroid_thumbnail photo %}</a>
+		<h4 class="photologue_pro_photo_title">{{ photo.title }}</h4>
+	</div>	
+	{% endfor %}
+</div>
+{% endblock %}

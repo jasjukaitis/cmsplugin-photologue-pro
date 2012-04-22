@@ -1,5 +1,4 @@
 from django import template
-
 from photologue import models
 
 register = template.Library()

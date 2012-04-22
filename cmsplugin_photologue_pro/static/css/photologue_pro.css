@@ -69,8 +69,8 @@
 	z-index: 5;
 }
 
-.photologue_pro_album_thumbnails:hover .photologue_pro_polaroid.photo2,
-.photologue_pro_album_thumbnails:focus .photologue_pro_polaroid.photo2 {
+.photologue_pro_album_thumbnails:hover .photologue_pro_polaroid.photo3,
+.photologue_pro_album_thumbnails:focus .photologue_pro_polaroid.photo3 {
 	z-index: 4;
 }
 
