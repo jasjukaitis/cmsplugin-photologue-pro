@@ -14,22 +14,32 @@ def overview(request):
 
 def album(request, album):
     """Shows all images of album."""
-    gallery = models.Gallery.objects.get(pk=album)
+    tpl = 'cmsplugin_photologue_pro/album.html'
+    try:
+        gallery = models.Gallery.objects.get(pk=album)
+    except models.Gallery.DoesNotExist:
+        return render(request, tpl)
     if not gallery.is_public:
-        return render(request, 'cmsplugin_photologue_pro/album.html',
+        return render(request, tpl,
                       {'is_not_public': True})
     photos = gallery.photos.filter(is_public=True).order_by('id')
-    return render(request, 'cmsplugin_photologue_pro/album.html',
+    return render(request, tpl,
                   {'gallery': gallery,
                    'photos': photos})
 
 def photo(request, album, photo):
     """Shows a detailed view of the photo."""
-    gallery = models.Gallery.objects.get(pk=album)
-    photo = gallery.photos.get(pk=photo)
+    tpl = 'cmsplugin_photologue_pro/photo.html'
+    try:
+        gallery = models.Gallery.objects.get(pk=album)
+    except models.Gallery.DoesNotExist:
+        return render(request, tpl)
+    try:
+        photo = gallery.photos.get(pk=photo)
+    except models.Photo.DoesNotExist:
+        return render(request, tpl)
     if not gallery.is_public or not photo.is_public:
-        return render(request, 'cmsplugin_photologue_pro/photo.html',
-                      {'is_not_public': True})
+        return render(request, tpl, {'is_not_public': True})
     photosize = models.PhotoSize.objects.get(name='normal')
     photo.create_size(photosize)
     exif = None
@@ -39,7 +49,7 @@ def photo(request, album, photo):
         exif = photo.EXIF
     photo.view_count += 1
     photo.save()
-    return render(request, 'cmsplugin_photologue_pro/photo.html',
+    return render(request, tpl,
                   {'gallery': gallery,
                    'photo': photo,
                    'exif': exif,

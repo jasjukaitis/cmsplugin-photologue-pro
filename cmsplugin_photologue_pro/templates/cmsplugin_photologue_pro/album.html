@@ -6,6 +6,9 @@
 {% if is_not_public %}
 <div class="photologue_pro_error">{% trans "The requested album is not public." %}</div>
 {% else %}
+{% if not gallery %}
+<div class="photologue_pro_error">{% trans "The requested album does not exist." %}</div>
+{% else %}
 <div class="photologue_pro_album_index">
 	{% for photo in photos %}
 	<div class="photologue_pro_photo">
@@ -15,5 +18,6 @@
 	{% endfor %}
 </div>
 <p class="photologue_pro_album_description">{{ gallery.description }}</p>
+{% endif %}
 {% endif %}
 {% endblock %}

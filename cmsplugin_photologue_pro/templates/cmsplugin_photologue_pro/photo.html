@@ -5,6 +5,9 @@
 {% if is_not_public %}
 <div class="photologue_pro_error">{% trans "The requested photo is not public." %}</div>
 {% else %}
+{% if not photo %}
+<div class="photologue_pro_error">{% trans "The requested photo does not exist." %}</div>
+{% else %}
 <div class="photologue_pro_back">
 	<a href="{% url cmsplugin_photologue_pro.views.album gallery.id %}">&lt; {% trans "Back to album" %}</a>
 	{% if previous %}<a href="{% url cmsplugin_photologue_pro.views.photo gallery.id previous.id %}">{% trans "Previous photo" %}</a>{% endif %}
@@ -31,5 +34,6 @@
 	</div>
 	{% endif %}
 </aside>
+{% endif %}
 {% endif %}
 {% endblock %}
