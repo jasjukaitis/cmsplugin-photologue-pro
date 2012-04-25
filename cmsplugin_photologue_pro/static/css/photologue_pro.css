@@ -1,7 +1,14 @@
 .photologue_pro_album, .photologue_pro_photo {
 	float: left;
-	margin: 0 20px 0 0;
 	text-align: center;
+}
+
+.photologue_pro_album {
+	margin: 0 20px 10px 0;
+}
+
+.photologue_pro_photo {
+	margin: 0 5px 10px 0;
 }
 
 .photologue_pro_album_thumbnails {
@@ -107,8 +114,12 @@
 	-o-transform: rotate(-8deg);
 }
 
-.photologue_pro_back {
+.photologue_pro_navigation {
 	margin: 0 0 15px;
+}
+
+.photologue_pro_navigation a {
+	margin-right: 10px;
 }
 
 .photologue_pro_album_title, .photologue_pro_photo_title {
@@ -127,11 +138,10 @@
 
 .photologue_pro_album_description {
 	margin: 0;
-	padding-top: 20px;
 	clear: both;
 }
 
-.photologue_pro_photo_details {
+.photologue_pro_photo_left {
 	float: left;
 }
 

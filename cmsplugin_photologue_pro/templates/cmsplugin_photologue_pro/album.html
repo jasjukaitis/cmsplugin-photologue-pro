@@ -2,7 +2,7 @@
 {% load cmsplugin_photologue_pro_tags i18n %}
 
 {% block gallery %}
-<div class="photologue_pro_back"><a href="{% url cmsplugin_photologue_pro.views.overview %}">&lt; {% trans "Back to overview" %}</a></div>
+<div class="photologue_pro_navigation"><a href="{% url cmsplugin_photologue_pro.views.overview %}">&lt; {% trans "Back to overview" %}</a></div>
 {% if is_not_public %}
 <div class="photologue_pro_error">{% trans "The requested album is not public." %}</div>
 {% else %}

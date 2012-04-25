@@ -8,17 +8,19 @@
 {% if not photo %}
 <div class="photologue_pro_error">{% trans "The requested photo does not exist." %}</div>
 {% else %}
-<div class="photologue_pro_back">
+<div class="photologue_pro_navigation">
 	<a href="{% url cmsplugin_photologue_pro.views.album gallery.id %}">&lt; {% trans "Back to album" %}</a>
 	{% if previous %}<a href="{% url cmsplugin_photologue_pro.views.photo gallery.id previous.id %}">{% trans "Previous photo" %}</a>{% endif %}
 	{% if next %}<a href="{% url cmsplugin_photologue_pro.views.photo gallery.id next.id %}">{% trans "Next photo" %}</a>{% endif %}
 </div>
-<div class="photologue_pro_photo_details">
-	<img src="{{ photo.get_normal_url }}" alt="{{ photo.title }}" title="{{ photo.title }}" />
-	<h2>{{ photo.title }}</h2>
-	{% if photo.caption %}
-	<div class="photologue_pro_photo_caption">{{ photo.caption }}</div>
-	{% endif %}
+<div class="photologue_pro_photo_left clearfix">
+	<div class="photologue_pro_photo_details">
+		<img src="{{ photo.get_normal_url }}" alt="{{ photo.title }}" title="{{ photo.title }}" />
+		<h2>{{ photo.title }}</h2>
+		{% if photo.caption %}
+		<div class="photologue_pro_photo_caption">{{ photo.caption }}</div>
+		{% endif %}
+	</div>
 </div>
 <aside class="photologue_pro_photo_sidebar">
 	<div>
