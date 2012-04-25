@@ -19,7 +19,11 @@ class AlbumPlugin(CMSPluginBase):
     render_template = 'cmsplugin_photologue_pro/album_plugin.html'
 
     def render(self, context, instance, placeholder):
-        photo_instance = instance.album.photos.all().order_by('id')
+        if not instance.album.is_public:
+            context.update({'is_not_public': True})
+            return context
+        photo_instance = instance.album.photos.filter(is_public=True)
+        photo_instance = photo_instance.order_by('id')
         per_page = instance.per_page or 100
         paginator = Paginator(photo_instance, per_page)
         try:

@@ -15,7 +15,10 @@ def overview(request):
 def album(request, album):
     """Shows all images of album."""
     gallery = models.Gallery.objects.get(pk=album)
-    photos = gallery.photos.all().order_by('id')
+    if not gallery.is_public:
+        return render(request, 'cmsplugin_photologue_pro/album.html',
+                      {'is_not_public': True})
+    photos = gallery.photos.filter(is_public=True).order_by('id')
     return render(request, 'cmsplugin_photologue_pro/album.html',
                   {'gallery': gallery,
                    'photos': photos})
@@ -24,6 +27,9 @@ def photo(request, album, photo):
     """Shows a detailed view of the photo."""
     gallery = models.Gallery.objects.get(pk=album)
     photo = gallery.photos.get(pk=photo)
+    if not gallery.is_public or not photo.is_public:
+        return render(request, 'cmsplugin_photologue_pro/photo.html',
+                      {'is_not_public': True})
     photosize = models.PhotoSize.objects.get(name='normal')
     photo.create_size(photosize)
     exif = None
