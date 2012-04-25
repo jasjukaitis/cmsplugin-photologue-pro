@@ -164,3 +164,8 @@
 	width: 120px;
 	text-align: left;
 }
+
+.photologue_pro_pagination {
+	padding-top: 15px;
+	clear: both;
+}

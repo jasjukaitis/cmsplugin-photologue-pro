@@ -3,11 +3,23 @@
 {% block gallery %}
 <h2>{{ gallery.title }}</h2>
 <div class="photologue_pro_album_index">
-	{% for photo in photos %}
+	{% for photo in photos.object_list %}
 	<div class="photologue_pro_photo">
 		<a href="{% url cmsplugin_photologue_pro.views.photo gallery.id photo.id %}">{% polaroid_thumbnail photo %}</a>
 		<h4 class="photologue_pro_photo_title">{{ photo.title }}</h4>
 	</div>	
 	{% endfor %}
 </div>
+{% if pages|length > 1 %}
+<div class="photologue_pro_pagination">
+	{% trans "Page" %}:
+	{% for page in pages %}
+	{% ifequal page current_page %}
+	<span>{{ page }}</span>
+	{% else %}
+	<a href="?page={{ page }}">{{ page }}</a>
+	{% endifequal %}
+	{% endfor %}
+</div>
+{% endif %}
 {% endblock %}
