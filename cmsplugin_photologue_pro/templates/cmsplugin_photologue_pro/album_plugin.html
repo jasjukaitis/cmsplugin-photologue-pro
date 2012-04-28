@@ -10,7 +10,9 @@
 	<div class="photologue_pro_photo">
 		<a href="{% url cmsplugin_photologue_pro.views.photo gallery.id photo.id %}">{% polaroid_thumbnail photo %}</a>
 		<h4 class="photologue_pro_photo_title">{{ photo.title }}</h4>
-	</div>	
+	</div>
+	{% empty %}
+	<div class="photologue_pro_error">{% trans "Sorry, there are no photos to show!" %}</div>
 	{% endfor %}
 </div>
 {% if pages|length > 1 %}

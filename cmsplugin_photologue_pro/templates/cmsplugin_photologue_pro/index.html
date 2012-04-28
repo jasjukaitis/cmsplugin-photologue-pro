@@ -7,11 +7,18 @@
 	<a href="{% url cmsplugin_photologue_pro.views.album gallery.id %}" class="photologue_pro_album_thumbnails order{{ order|random }}">
 		{% for photo in gallery.photos.all|slice:":3" %}
 			{% polaroid_thumbnail photo forloop.counter %}
+		{% empty %}
+		{% with counter=1 url=STATIC_URL|add:"images/nophotos.jpg" %}
+			{% trans "No photos available" as title %}
+			{% include "cmsplugin_photologue_pro/polaroid.html" %}
+		{% endwith %}
 		{% endfor %}
 	</a>
 	<h4 class="photologue_pro_album_title">{{ gallery.title }}</h4>
 	<span class="photologue_pro_album_count">{% blocktrans with gallery.photo_count as count %}{{ count }} photos{% endblocktrans %}</span>
 </div>
+{% empty %}
+<div class="photologue_pro_error">{% trans "Sorry, there are no albums to show!" %}</div>
 {% endfor %}
 
 {% endblock %}
