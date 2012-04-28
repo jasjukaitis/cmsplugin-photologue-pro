@@ -7,7 +7,11 @@ from photologue import models
 
 def overview(request):
     """Shows all available photo galleries."""
-    galleries = models.Gallery.objects.filter(is_public=True)
+    galleries = models.Gallery.objects.select_related()
+    galleries = galleries.order_by('title').filter(is_public=True)
+    for gallery in galleries:
+        photos = gallery.photos.filter(is_public=True).order_by('id')[:3]
+        gallery.filtered_photos = photos
     return render(request, 'cmsplugin_photologue_pro/index.html',
                   {'galleries': galleries,
                    'order': [1, 2, 3]})
