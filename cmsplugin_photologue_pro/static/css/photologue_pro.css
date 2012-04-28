@@ -29,6 +29,7 @@
 	-webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
 	-moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+	transition: -webkit-transform .15s linear;
 }
 
 .photologue_pro_polaroid.photo1 {
@@ -49,6 +50,7 @@
 	-webkit-transform: rotate(-4deg);
 	-moz-transform: rotate(-4deg);
 	-o-transform: rotate(-4deg);
+	transform: rotate(-4deg);
 }
 
 .photologue_pro_album_thumbnails.order1 .photologue_pro_polaroid.photo3,
@@ -57,12 +59,14 @@
 	-webkit-transform: rotate(4deg);
 	-moz-transform: rotate(4deg);
 	-o-transform: rotate(4deg);
+	transform: rotate(4deg);
 }
 
 .photologue_pro_album_thumbnails.order:hover .photologue_pro_polaroid,
 .photologue_pro_album_thumbnails.order:focus .photologue_pro_polaroid {
 	-webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+	-o-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
 }
 
@@ -88,8 +92,9 @@
 .photologue_pro_album_thumbnails.order3:hover .photologue_pro_polaroid.photo3,
 .photologue_pro_album_thumbnails.order3:focus .photologue_pro_polaroid.photo3 {
 	-webkit-transform: scale(1.15) rotate(-8deg) translate(-3em, 0em);
-	-moz-transform: rotate(8deg);
-	-o-transform: rotate(8deg);
+	-moz-transform: scale(1.15) rotate(-8deg) translate(-3em, 0em);
+	-o-transform: scale(1.15) rotate(-8deg) translate(-3em, 0em);
+	transform: scale(1.15) rotate(-8deg) translate(-3em, 0em);
 }
 
 .photologue_pro_album_thumbnails.order1:hover .photologue_pro_polaroid.photo2,
@@ -99,8 +104,9 @@
 .photologue_pro_album_thumbnails.order3:hover .photologue_pro_polaroid.photo2,
 .photologue_pro_album_thumbnails.order3:focus .photologue_pro_polaroid.photo2 {
 	-webkit-transform: scale(1.15) rotate(0deg);
-	-moz-transform: rotate(-8deg);
-	-o-transform: rotate(-8deg);
+	-moz-transform: scale(1.15) rotate(0deg);
+	-o-transform: scale(1.15) rotate(0deg);
+	transform: scale(1.15) rotate(0deg);
 }
 
 .photologue_pro_album_thumbnails.order1:hover .photologue_pro_polaroid.photo3,
@@ -110,8 +116,9 @@
 .photologue_pro_album_thumbnails.order3:hover .photologue_pro_polaroid.photo1,
 .photologue_pro_album_thumbnails.order3:focus .photologue_pro_polaroid.photo1 {
 	-webkit-transform: scale(1.15) rotate(8deg) translate(3em, 0em);
-	-moz-transform: rotate(-8deg);
-	-o-transform: rotate(-8deg);
+	-moz-transform: scale(1.15) rotate(8deg) translate(3em, 0em);
+	-o-transform: scale(1.15) rotate(8deg) translate(3em, 0em);
+	transform: scale(1.15) rotate(8deg) translate(3em, 0em);
 }
 
 .photologue_pro_navigation {
@@ -133,6 +140,9 @@
 .photologue_pro_album_index a:hover .photologue_pro_polaroid,
 .photologue_pro_album_index a:focus .photologue_pro_polaroid {
 	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-o-transform: scale(1.2);
+	transform: scale(1.2);
 	z-index: 2;
 }
 
