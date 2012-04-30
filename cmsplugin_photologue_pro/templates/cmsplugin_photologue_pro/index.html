@@ -2,23 +2,24 @@
 {% load cmsplugin_photologue_pro_tags i18n %}
 
 {% block gallery %}
-{% for gallery in galleries %}
-<div class="photologue_pro_album">
-	<a href="{% url cmsplugin_photologue_pro.views.album gallery.id %}" class="photologue_pro_album_thumbnails order{{ order|random }}">
-		{% for photo in gallery.filtered_photos %}
-			{% polaroid_thumbnail photo forloop.counter %}
-		{% empty %}
-		{% with counter=1 url=STATIC_URL|add:"images/nophotos.jpg" %}
-			{% trans "No photos available" as title %}
-			{% include "cmsplugin_photologue_pro/polaroid.html" %}
-		{% endwith %}
-		{% endfor %}
-	</a>
-	<h4 class="photologue_pro_album_title">{{ gallery.title }}</h4>
-	<span class="photologue_pro_album_count">{% blocktrans with gallery.photo_count as count %}{{ count }} photos{% endblocktrans %}</span>
+<div class="photologue_pro_album_index">
+	{% for gallery in galleries %}
+	<div class="photologue_pro_album">
+		<a href="{% url cmsplugin_photologue_pro.views.album gallery.id %}" class="photologue_pro_album_thumbnails order{% if gallery.filtered_photos|len > 0 %}{{ order|random }}{% else %}1{% endif %}">
+			{% for photo in gallery.filtered_photos %}
+				{% polaroid_thumbnail photo forloop.counter %}
+			{% empty %}
+			{% with counter=1 url=STATIC_URL|add:"images/nophotos.jpg" %}
+				{% trans "No photos available" as title %}
+				{% include "cmsplugin_photologue_pro/polaroid.html" %}
+			{% endwith %}
+			{% endfor %}
+		</a>
+		<h4 class="photologue_pro_album_title center">{{ gallery.title }}</h4>
+		<div class="photologue_pro_album_count center">{% blocktrans with gallery.photo_count as count %}{{ count }} photos{% endblocktrans %}</div>
+	</div>
+	{% empty %}
+	<div class="photologue_pro_error">{% trans "Sorry, there are no albums to show!" %}</div>
+	{% endfor %}
 </div>
-{% empty %}
-<div class="photologue_pro_error">{% trans "Sorry, there are no albums to show!" %}</div>
-{% endfor %}
-
 {% endblock %}

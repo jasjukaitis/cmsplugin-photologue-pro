@@ -1,10 +1,13 @@
-.photologue_pro_album, .photologue_pro_photo {
-	float: left;
+.center {
 	text-align: center;
 }
 
+.photologue_pro_album, .photologue_pro_photo {
+	float: left;
+}
+
 .photologue_pro_album {
-	margin: 0 20px 10px 0;
+	margin: 0 40px 10px 0;
 }
 
 .photologue_pro_photo {
@@ -13,8 +16,9 @@
 
 .photologue_pro_album_thumbnails {
 	display: block;
-	height: 160px;
-	width: 160px;
+	height: 150px;
+	width: 150px;
+	padding: 10px;
 }
 
 .photologue_pro_album .photologue_pro_polaroid {
@@ -24,7 +28,8 @@
 .photologue_pro_polaroid {
 	width: 130px;
 	height: 130px;
-	border: 10px solid #fff;
+	padding: 10px;
+	background-color: #fff;
 	-webkit-transition: -webkit-transform .15s linear;
 	-webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
 	-moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
