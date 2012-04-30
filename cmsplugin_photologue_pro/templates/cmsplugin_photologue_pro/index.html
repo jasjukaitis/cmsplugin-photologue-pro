@@ -16,7 +16,7 @@
 			{% endfor %}
 		</a>
 		<h4 class="photologue_pro_album_title center">{{ gallery.title }}</h4>
-		<div class="photologue_pro_album_count center">{% blocktrans with gallery.photo_count as count %}{{ count }} photos{% endblocktrans %}</div>
+		<div class="photologue_pro_album_count center">{% blocktrans with gallery.filtered_photos|length as count %}{{ count }} photos{% endblocktrans %}</div>
 	</div>
 	{% empty %}
 	<div class="photologue_pro_error">{% trans "Sorry, there are no albums to show!" %}</div>
