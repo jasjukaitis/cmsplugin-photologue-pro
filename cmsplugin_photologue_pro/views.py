@@ -51,8 +51,6 @@ def photo(request, album, photo):
     next_photo = photo.get_next_in_gallery(gallery)
     if getattr(settings, 'PHOTOLOGUE_PRO_EXIF_ENABLED', False):
         exif = photo.EXIF
-    photo.view_count += 1
-    photo.save()
     return render(request, tpl,
                   {'gallery': gallery,
                    'photo': photo,
