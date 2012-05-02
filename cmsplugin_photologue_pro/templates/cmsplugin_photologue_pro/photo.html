@@ -8,6 +8,24 @@
 {% if not photo %}
 <div class="photologue_pro_error">{% trans "The requested photo does not exist." %}</div>
 {% else %}
+<script type="text/javascript">
+	// Arrow navigation
+	document.onkeydown = function(evt) {
+		evt = evt || window.event;
+		switch (evt.keyCode) {
+			{% if previous %}
+			case 37:
+				window.location = '{% url cmsplugin_photologue_pro.views.photo gallery.id previous.id %}';
+				break;
+			{% endif %}
+			{% if next %}
+			case 39:
+				window.location = '{% url cmsplugin_photologue_pro.views.photo gallery.id next.id %}';
+				break;
+			{% endif %}
+		}
+	};
+</script>
 <div class="photologue_pro_navigation">
 	<a href="{% url cmsplugin_photologue_pro.views.album gallery.id %}">&lt; {% trans "Back to album" %}</a>
 	{% if previous %}<a href="{% url cmsplugin_photologue_pro.views.photo gallery.id previous.id %}">{% trans "Previous photo" %}</a>{% endif %}
