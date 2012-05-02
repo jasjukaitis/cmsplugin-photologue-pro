@@ -4,8 +4,9 @@ from photologue import models
 register = template.Library()
 
 @register.inclusion_tag('cmsplugin_photologue_pro/polaroid.html')
-def polaroid_thumbnail(photo, counter=''):
-    photosize = models.PhotoSize.objects.get(name='thumbnail')
+def polaroid_thumbnail(photo, photosize=None, counter=''):
+    if not photosize:
+        photosize = models.PhotoSize.objects.get(name='thumbnail')
     photo.create_size(photosize)
     return {
         'url': photo.get_thumbnail_url,

@@ -12,7 +12,7 @@
 <div class="photologue_pro_album_index">
 	{% for photo in photos %}
 	<div class="photologue_pro_photo">
-		<a href="{% url cmsplugin_photologue_pro.views.photo gallery.id photo.id %}">{% polaroid_thumbnail photo %}</a>
+		<a href="{% url cmsplugin_photologue_pro.views.photo gallery.id photo.id %}">{% polaroid_thumbnail photo photosize %}</a>
 		<h4 class="photologue_pro_photo_title center">{{ photo.title }}</h4>
 	</div>
 	{% endfor %}

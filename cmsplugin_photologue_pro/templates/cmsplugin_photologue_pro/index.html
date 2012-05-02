@@ -7,7 +7,7 @@
 	<div class="photologue_pro_album">
 		<a href="{% url cmsplugin_photologue_pro.views.album gallery.id %}" class="photologue_pro_album_thumbnails order{% if gallery.filtered_photos|len > 0 %}{{ order|random }}{% else %}1{% endif %}">
 			{% for photo in gallery.filtered_photos %}
-				{% polaroid_thumbnail photo forloop.counter %}
+				{% polaroid_thumbnail photo photosize forloop.counter %}
 			{% empty %}
 			{% with counter=1 url=STATIC_URL|add:"images/nophotos.jpg" %}
 				{% trans "No photos available" as title %}

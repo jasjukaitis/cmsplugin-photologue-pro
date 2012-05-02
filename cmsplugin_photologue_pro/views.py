@@ -12,9 +12,11 @@ def overview(request):
     for gallery in galleries:
         photos = gallery.photos.filter(is_public=True).order_by('id')[:3]
         gallery.filtered_photos = photos
+    photosize = models.PhotoSize.objects.get(name='thumbnail')
     return render(request, 'cmsplugin_photologue_pro/index.html',
                   {'galleries': galleries,
-                   'order': [1, 2, 3]})
+                   'order': [1, 2, 3],
+                   'photosize': photosize})
 
 def album(request, album):
     """Shows all images of album."""
@@ -27,9 +29,11 @@ def album(request, album):
         return render(request, tpl,
                       {'is_not_public': True})
     photos = gallery.photos.filter(is_public=True).order_by('id')
+    photosize = models.PhotoSize.objects.get(name='thumbnail')
     return render(request, tpl,
                   {'gallery': gallery,
-                   'photos': photos})
+                   'photos': photos,
+                   'photosize': photosize})
 
 def photo(request, album, photo):
     """Shows a detailed view of the photo."""
