@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-28 16:26-0500\n"
+"POT-Creation-Date: 2012-05-03 23:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,104 +17,107 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: cmsplugin_photologue_pro/cms_app.py:8
+#: cms_app.py:8
 msgid "Photologue galleries"
 msgstr "Photologue Galerien"
 
-#: cmsplugin_photologue_pro/cms_plugins.py:17
-#: cmsplugin_photologue_pro/models.py:17
+#: cms_plugins.py:17 models.py:17
 msgid "Album"
 msgstr "Album"
 
-#: cmsplugin_photologue_pro/models.py:18
+#: models.py:18
 msgid "Photos per page"
 msgstr "Fotos pro Seite"
 
-#: cmsplugin_photologue_pro/templates/cmsplugin_photologue_pro/album.html:5
+#: templates/cmsplugin_photologue_pro/album.html:5
 msgid "Back to overview"
 msgstr "Zurück zur Übersicht"
 
-#: cmsplugin_photologue_pro/templates/cmsplugin_photologue_pro/album.html:7
-#: cmsplugin_photologue_pro/templates/cmsplugin_photologue_pro/album_plugin.html:5
+#: templates/cmsplugin_photologue_pro/album.html:7
+#: templates/cmsplugin_photologue_pro/album_plugin.html:5
 msgid "The requested album is not public."
 msgstr "Das gewünschte Album ist nicht öffentlich."
 
-#: cmsplugin_photologue_pro/templates/cmsplugin_photologue_pro/album.html:10
+#: templates/cmsplugin_photologue_pro/album.html:10
 msgid "The requested album does not exist."
 msgstr "Das gewünschte Alvum existiert nicht."
 
-#: cmsplugin_photologue_pro/templates/cmsplugin_photologue_pro/album.html:20
-#: cmsplugin_photologue_pro/templates/cmsplugin_photologue_pro/album_plugin.html:15
+#: templates/cmsplugin_photologue_pro/album.html:20
+#: templates/cmsplugin_photologue_pro/album_plugin.html:15
 msgid "Sorry, there are no photos to show!"
 msgstr "Entschuldigung, es gibt keine Fotos zum anzeigen!"
 
-#: cmsplugin_photologue_pro/templates/cmsplugin_photologue_pro/album_plugin.html:20
+#: templates/cmsplugin_photologue_pro/album_plugin.html:20
 msgid "Page"
 msgstr "Seite"
 
-#: cmsplugin_photologue_pro/templates/cmsplugin_photologue_pro/exif.html:3
+#: templates/cmsplugin_photologue_pro/exif.html:3
 msgid "EXIF data"
 msgstr "EXIF-Daten"
 
-#: cmsplugin_photologue_pro/templates/cmsplugin_photologue_pro/exif.html:6
+#: templates/cmsplugin_photologue_pro/exif.html:6
 msgid "Date"
 msgstr "Datum"
 
-#: cmsplugin_photologue_pro/templates/cmsplugin_photologue_pro/exif.html:10
+#: templates/cmsplugin_photologue_pro/exif.html:10
 msgid "Camera"
 msgstr "Kamera"
 
-#: cmsplugin_photologue_pro/templates/cmsplugin_photologue_pro/exif.html:14
+#: templates/cmsplugin_photologue_pro/exif.html:14
 msgid "Exposure"
 msgstr "Belichtung"
 
-#: cmsplugin_photologue_pro/templates/cmsplugin_photologue_pro/exif.html:18
+#: templates/cmsplugin_photologue_pro/exif.html:15
+msgid "sec"
+msgstr "sek"
+
+#: templates/cmsplugin_photologue_pro/exif.html:18
 msgid "Aperture"
 msgstr "Blende"
 
-#: cmsplugin_photologue_pro/templates/cmsplugin_photologue_pro/exif.html:22
+#: templates/cmsplugin_photologue_pro/exif.html:22
 msgid "Focal Length"
 msgstr "Brennweite"
 
-#: cmsplugin_photologue_pro/templates/cmsplugin_photologue_pro/exif.html:26
+#: templates/cmsplugin_photologue_pro/exif.html:26
 msgid "ISO Speed"
-msgstr "ISO Empfindlichkeit"
+msgstr "ISO-Empfindlichkeit"
 
-#: cmsplugin_photologue_pro/templates/cmsplugin_photologue_pro/index.html:12
+#: templates/cmsplugin_photologue_pro/index.html:13
 msgid "No photos available"
 msgstr "Keine Fotos verfügbar"
 
-#: cmsplugin_photologue_pro/templates/cmsplugin_photologue_pro/index.html:18
+#: templates/cmsplugin_photologue_pro/index.html:19
 #, python-format
 msgid "%(count)s photos"
 msgstr "%(count)s Fotos"
 
-#: cmsplugin_photologue_pro/templates/cmsplugin_photologue_pro/index.html:21
+#: templates/cmsplugin_photologue_pro/index.html:22
 msgid "Sorry, there are no albums to show!"
 msgstr "Entschuldigung, es gibt keine Alben zum anzeigen!"
 
-#: cmsplugin_photologue_pro/templates/cmsplugin_photologue_pro/photo.html:6
+#: templates/cmsplugin_photologue_pro/photo.html:6
 msgid "The requested photo is not public."
 msgstr "Das gewünschte Foto ist nicht öffentlich."
 
-#: cmsplugin_photologue_pro/templates/cmsplugin_photologue_pro/photo.html:9
+#: templates/cmsplugin_photologue_pro/photo.html:9
 msgid "The requested photo does not exist."
 msgstr "Das gewünschte Foto existiert nicht."
 
-#: cmsplugin_photologue_pro/templates/cmsplugin_photologue_pro/photo.html:12
+#: templates/cmsplugin_photologue_pro/photo.html:30
 msgid "Back to album"
 msgstr "Zurück zum Album"
 
-#: cmsplugin_photologue_pro/templates/cmsplugin_photologue_pro/photo.html:13
+#: templates/cmsplugin_photologue_pro/photo.html:31
 msgid "Previous photo"
 msgstr "Vorheriges Foto"
 
-#: cmsplugin_photologue_pro/templates/cmsplugin_photologue_pro/photo.html:14
+#: templates/cmsplugin_photologue_pro/photo.html:32
 msgid "Next photo"
 msgstr "Nächstes Foto"
 
-#: cmsplugin_photologue_pro/templates/cmsplugin_photologue_pro/photo.html:27
+#: templates/cmsplugin_photologue_pro/photo.html:45
 #, python-format
 msgid "This photo was taken on %(date)s and was viewed %(views)s times."
-msgstr "Dieses Foto wurde am %(date)s aufgenommen und wurde %(views)s Mal "
-"angesehen."
+msgstr ""
+"Dieses Foto wurde am %(date)s aufgenommen und wurde %(views)s Mal angesehen."

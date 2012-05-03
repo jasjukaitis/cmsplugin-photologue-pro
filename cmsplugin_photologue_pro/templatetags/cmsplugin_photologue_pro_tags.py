@@ -1,4 +1,6 @@
+from datetime import datetime
 from django import template
+from django.utils import formats
 from photologue import models
 
 register = template.Library()
@@ -16,4 +18,11 @@ def polaroid_thumbnail(photo, photosize=None, counter=''):
 
 @register.simple_tag
 def exif(photo, attr):
-    return photo.EXIF.get(attr, '')
+    value = str(photo.EXIF.get(attr, ''))
+    if attr == 'Image DateTime':
+        dt = datetime.strptime(str(value), '%Y:%m:%d %H:%M:%S')
+        value = formats.date_format(dt, 'DATETIME_FORMAT', True)
+    elif attr == 'EXIF ApertureValue':
+        f = value.split('/')
+        value = 'f/%.1f' % (float(f[0]) / float(f[1]))
+    return value

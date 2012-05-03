@@ -187,8 +187,12 @@
 }
 
 .photologue_pro_photo_sidebar table th {
-	width: 120px;
+	padding-right: 10px;
 	text-align: left;
+}
+
+.photologue_pro_photo_sidebar table th, .photologue_pro_photo_sidebar table td {
+	vertical-align: top;
 }
 
 .photologue_pro_pagination {
