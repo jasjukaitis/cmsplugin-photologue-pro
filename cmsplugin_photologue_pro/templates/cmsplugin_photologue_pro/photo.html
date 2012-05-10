@@ -42,7 +42,7 @@
 </div>
 <aside class="photologue_pro_photo_sidebar">
 	<div>
-		<p>{% blocktrans with photo.date_taken|date:"DATE_FORMAT" as date and photo.view_count as views %}This photo was taken on {{ date }} and was viewed {{ views }} times.{% endblocktrans %}</p>
+		<p>{% blocktrans with photo.date_taken as date and photo.view_count as views %}This photo was taken on {{ date }} and was viewed {{ views }} times.{% endblocktrans %}</p>
 	</div>
 	{% if exif %}
 	{% include "cmsplugin_photologue_pro/exif.html" %}
