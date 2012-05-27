@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-03 23:31+0200\n"
+"POT-Creation-Date: 2012-05-27 20:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,8 +80,8 @@ msgid "Focal Length"
 msgstr "Brennweite"
 
 #: templates/cmsplugin_photologue_pro/exif.html:26
-msgid "ISO Speed"
-msgstr "ISO-Empfindlichkeit"
+msgid "ISO"
+msgstr "ISO"
 
 #: templates/cmsplugin_photologue_pro/index.html:13
 msgid "No photos available"

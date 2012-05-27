@@ -52,8 +52,8 @@ def photo(request, album, photo):
     photosize = models.PhotoSize.objects.get(name='normal')
     photo.create_size(photosize)
     # FIXME: In the template, DATE_FORMAT is wrong. So I'm going this way
-    photo.date_taken = formats.date_format(photo.date_taken, 'DATE_FORMAT',
-                                           True)
+    photo.datetaken = formats.date_format(photo.date_taken, 'DATE_FORMAT',
+                                          True)
     exif = None
     previous_photo = photo.get_previous_in_gallery(gallery)
     next_photo = photo.get_next_in_gallery(gallery)
