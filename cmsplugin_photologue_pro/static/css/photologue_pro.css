@@ -162,15 +162,11 @@
 }
 
 .photologue_pro_photo_details img {
-	margin: 0 auto;
+	margin: 0 auto 15px auto;
 }
 
 .photologue_pro_photo_details img, .photologue_pro_photo_caption {
 	display: block;
-}
-
-.photologue_pro_photo_caption {
-	margin-top: 15px;
 }
 
 .photologue_pro_photo_sidebar {
