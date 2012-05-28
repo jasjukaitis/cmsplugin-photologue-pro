@@ -24,5 +24,9 @@ def exif(photo, attr):
         value = formats.date_format(dt, 'DATETIME_FORMAT', True)
     elif attr == 'EXIF ApertureValue':
         f = value.split('/')
-        value = 'f/%.1f' % (float(f[0]) / float(f[1]))
+        if len(f) == 1:
+            aperture = float(f[0])
+        else:
+            aperture = float(f[0]) / float(f[1])
+        value = 'f/%.1f' % aperture
     return value
