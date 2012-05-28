@@ -161,6 +161,10 @@
 	float: left;
 }
 
+.photologue_pro_photo_details img {
+	margin: 0 auto;
+}
+
 .photologue_pro_photo_details img, .photologue_pro_photo_caption {
 	display: block;
 }
