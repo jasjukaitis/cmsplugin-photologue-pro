@@ -11,7 +11,7 @@ def overview(request):
     galleries = models.Gallery.objects.select_related()
     galleries = galleries.order_by('title').filter(is_public=True)
     for gallery in galleries:
-        photos = gallery.photos.filter(is_public=True).order_by('id')[:3]
+        photos = gallery.photos.filter(is_public=True).order_by('id')
         gallery.filtered_photos = photos
     photosize = models.PhotoSize.objects.get(name='thumbnail')
     return render(request, 'cmsplugin_photologue_pro/index.html',
