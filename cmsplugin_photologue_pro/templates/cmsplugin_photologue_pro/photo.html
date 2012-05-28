@@ -15,21 +15,21 @@
 		switch (evt.keyCode) {
 			{% if previous %}
 			case 37:
-				window.location = '{% url cmsplugin_photologue_pro.views.photo gallery.id previous.id %}';
+				window.location = '{% url photologue_photo gallery.id previous.id %}';
 				break;
 			{% endif %}
 			{% if next %}
 			case 39:
-				window.location = '{% url cmsplugin_photologue_pro.views.photo gallery.id next.id %}';
+				window.location = '{% url photologue_photo gallery.id next.id %}';
 				break;
 			{% endif %}
 		}
 	};
 </script>
 <div class="photologue_pro_navigation">
-	<a href="{% url cmsplugin_photologue_pro.views.album gallery.id %}">&lt; {% trans "Back to album" %}</a>
-	{% if previous %}<a href="{% url cmsplugin_photologue_pro.views.photo gallery.id previous.id %}">{% trans "Previous photo" %}</a>{% endif %}
-	{% if next %}<a href="{% url cmsplugin_photologue_pro.views.photo gallery.id next.id %}">{% trans "Next photo" %}</a>{% endif %}
+	<a href="{% url photologue_album gallery.id %}">&lt; {% trans "Back to album" %}</a>
+	{% if previous %}<a href="{% url photologue_photo gallery.id previous.id %}">{% trans "Previous photo" %}</a>{% endif %}
+	{% if next %}<a href="{% url photologue_photo gallery.id next.id %}">{% trans "Next photo" %}</a>{% endif %}
 </div>
 <div class="photologue_pro_photo_left clearfix">
 	<div class="photologue_pro_photo_details">
