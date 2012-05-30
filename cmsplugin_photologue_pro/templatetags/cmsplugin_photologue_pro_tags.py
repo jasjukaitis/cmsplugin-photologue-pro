@@ -19,7 +19,7 @@ def polaroid_thumbnail(photo, photosize=None, counter=''):
 @register.simple_tag
 def exif(photo, attr):
     value = str(photo.EXIF.get(attr, ''))
-    if attr == 'Image DateTime':
+    if attr == 'EXIF DateTimeOriginal':
         dt = datetime.strptime(str(value), '%Y:%m:%d %H:%M:%S')
         value = formats.date_format(dt, 'DATETIME_FORMAT', True)
     elif attr == 'EXIF ApertureValue':
