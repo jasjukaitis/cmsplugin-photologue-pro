@@ -1,4 +1,4 @@
 include README.rst
-recursive-include cmsplugin_photologue/templates *
-recursive-include cmsplugin_photologue/static *
-recursive-include cmsplugin_photologue/locale *
+recursive-include cmsplugin_photologue_pro/templates *
+recursive-include cmsplugin_photologue_pro/static *
+recursive-include cmsplugin_photologue_pro/locale *
