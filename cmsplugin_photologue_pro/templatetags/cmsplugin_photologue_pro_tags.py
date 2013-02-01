@@ -25,7 +25,10 @@ def exif(photo, attr):
     elif attr == 'EXIF ApertureValue':
         f = value.split('/')
         if len(f) == 1:
-            aperture = float(f[0])
+            try:
+                aperture = float(f[0])
+            except ValueError:
+                return '-'
         else:
             aperture = float(f[0]) / float(f[1])
         value = 'f/%.1f' % aperture
