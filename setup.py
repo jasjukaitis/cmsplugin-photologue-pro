@@ -6,7 +6,8 @@ setup(
     name='cmsplugin-photologue-pro',
     version='0.1.0',
     description='Photo gallery plugin for Django CMS',
-    long_description=open(os.path.join(os.path.dirname(__file__), 'README.rst')).read(),
+    long_description=open(os.path.join(os.path.dirname(__file__),
+                                       'README.rst')).read(),
     author='Raphael Jasjukaitis',
     author_email='webmaster@raphaa.de',
     url='https://github.com/raphaa/cmsplugin-photologue-pro',
@@ -20,6 +21,12 @@ setup(
     ],
     zip_safe=False,
     include_package_data=True,
-    install_requires=['django-cms', 'django-photologue']
+    dependency_links=[
+        'https://github.com/raphaa/django-photologue/archive/master.zip#egg=django-photologue'
+    ],
+    install_requires=[
+        'django-cms',
+        'django-photologue'
+    ]
 )
 
