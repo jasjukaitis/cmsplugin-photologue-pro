@@ -6,12 +6,16 @@ from photologue import models
 register = template.Library()
 
 def get_exif_data(photo, attr):
-    value = str(photo.EXIF.get(attr, ''))
+    value = photo.EXIF.get(attr)
+    if value is None:
+        return
     if attr == 'EXIF DateTimeOriginal':
         dt = datetime.strptime(str(value), '%Y:%m:%d %H:%M:%S')
         value = formats.date_format(dt, 'DATETIME_FORMAT', True)
     elif attr == 'EXIF DateOriginal':
-        value = str(photo.EXIF.get('EXIF DateTimeOriginal', ''))
+        value = photo.EXIF.get('EXIF DateTimeOriginal')
+        if value is None:
+            return
         dt = datetime.strptime(str(value), '%Y:%m:%d %H:%M:%S')
         value = formats.date_format(dt, 'DATE_FORMAT', True)
     elif attr == 'EXIF ApertureValue':
