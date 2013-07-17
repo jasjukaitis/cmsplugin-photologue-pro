@@ -8,7 +8,7 @@
 <div class="photologue_pro_album_index">
 	{% for photo in photos.object_list %}
 	<div class="photologue_pro_photo">
-		<a href="{% url photologue_photo gallery.id photo.id %}">{% polaroid_thumbnail photo %}</a>
+		<a href="{% url 'photologue_photo' gallery.id photo.id %}">{% polaroid_thumbnail photo %}</a>
 		<h4 class="photologue_pro_photo_title center">{{ photo.title }}</h4>
 	</div>
 	{% empty %}

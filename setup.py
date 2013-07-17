@@ -21,9 +21,6 @@ setup(
     ],
     zip_safe=False,
     include_package_data=True,
-    dependency_links=[
-        'https://github.com/raphaa/django-photologue/archive/master.zip#egg=django-photologue'
-    ],
     install_requires=[
         'django-cms',
         'django-photologue'

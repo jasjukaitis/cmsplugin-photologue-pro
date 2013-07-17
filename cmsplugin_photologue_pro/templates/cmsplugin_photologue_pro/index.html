@@ -5,7 +5,7 @@
 <div class="photologue_pro_album_index">
 	{% for gallery in galleries %}
 	<div class="photologue_pro_album">
-		<a href="{% url photologue_album gallery.id %}" class="photologue_pro_album_thumbnails order{% if gallery.filtered_photos|len > 0 %}{{ order|random }}{% else %}1{% endif %}">
+		<a href="{% url 'photologue_album' gallery.id %}" class="photologue_pro_album_thumbnails order{% if gallery.filtered_photos|length > 0 %}{{ order|random }}{% else %}1{% endif %}">
 			{% for photo in gallery.filtered_photos|slice:":3" %}
 				{% polaroid_thumbnail photo photosize forloop.counter %}
 			{% empty %}
